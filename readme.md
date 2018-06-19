@@ -1,4 +1,4 @@
-# Post It! V1.2.2
+# Post It! V1.2.3
 
 ----------
 ## Live-Demo: http://puxn.de

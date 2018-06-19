@@ -1,5 +1,5 @@
 <div id="chatbox-main">
-    <div class="chatbox-target" onclick="closeChat()">
+    <div class="chatbox-target">
         <p class="chatbox-heading">Chat</p>
     </div>
     <div class="chatbox-msg-container">

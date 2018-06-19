@@ -16,5 +16,5 @@
     define("SITE_NAME", "Post It!");
 
     //APP VERSION
-    define("APP_VERSION","v1.2.2");
+    define("APP_VERSION","v1.2.3");
 
