@@ -1,0 +1,61 @@
+.fa-signal{
+    color:green;
+}
+
+.list-group-item{
+    cursor: pointer;
+}
+
+.list-group-item:hover{
+    background-color: rgba(0,0,0,0.05);
+}
+
+
+#chatbox-main{
+    position: fixed;
+    bottom:70px;
+    right:200;
+    width:300px;
+    height:0px;
+    transition: height 0.5s;
+}
+
+.chatbox-target{
+    background-color:#23272b;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chatbox-heading{
+    text-align: center;
+    color:white;
+    font-weight: bold;
+    padding:5px;
+    margin:0;
+}
+
+.chatbox-msg-container{
+    border-left: 1px solid rgba(0,0,0,.125);
+    border-right: 1px solid rgba(0,0,0,.125);
+    height:100%;
+    padding:5px;
+    overflow-y: scroll;
+}
+
+.chatbox-msg{
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius:5px;
+    padding:5px;
+}
+
+.chatbox-msg-header{
+    font-size: 60%;
+    font-weight: bold;
+    margin:0;
+}
+
+.chatbox-msg-body{
+    padding:0;
+    margin:0;
+}
