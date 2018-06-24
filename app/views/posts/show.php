@@ -6,7 +6,7 @@
     Written by <?php echo $data["user"]->name; ?> on <?php echo $data["post"]->created_at; ?>
 </div>
 <p><?php echo $data["post"]->body; ?></p>
-
+<img src="<?php echo URL_ROOT."/".$data["post"]->img_url;?>" class="img-fluid" alt="">
 <?php if($data["post"]->user_id == $_SESSION["user_id"]): ?>
 <hr>
 <a href="<?php echo URL_ROOT; ?>/posts/edit/<?php echo $data["post"]->id; ?>" class="btn btn-dark">Edit</a>

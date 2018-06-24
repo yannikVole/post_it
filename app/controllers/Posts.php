@@ -35,13 +35,42 @@ class Posts extends Controller{
     public function add(){
         if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+           
+            if(isset($_FILES["image"])){
+                $file = $_FILES["image"];
+                $fileName = $file["name"];
+    
+                $fileExt = explode(".",$fileName);
+                $fileActualExt = strtolower(end($fileExt));
+    
+                $allowed = array('jpg','jpeg','png');
+    
+                if(in_array($fileActualExt,$allowed)){
+                    if($file["error"] === 0){
+                        if($file["size"] < 500000){
+                            $fileNameNew = uniqid('',true).".".$fileActualExt;
+                            $fileDestination = "uploads/".$fileNameNew;
+                            move_uploaded_file($file["tmp_name"],$fileDestination);
+
+                        } else {
+                            $data["image_error"] = "Your file is too big!";
+                        }
+                    } else {
+                        $data["image_error"] = "There was an error uploading your file!";
+                    }
+                }else {
+                    $data["image_error"] = "filetype not allowed!";
+                }
+            }
 
             $data = [
                 "title" => trim($_POST["title"]),
                 "body" => trim($_POST["body"]),
                 "user_id" => $_SESSION["user_id"],
+                "img_url" => $fileDestination,
                 "title_error" => "",
-                "body_error" => ""
+                "body_error" => "",
+                "image_error" => ""
             ];
 
             if(empty($data["title"])){

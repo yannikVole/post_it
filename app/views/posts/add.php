@@ -3,7 +3,7 @@
     <a href="<?php echo URL_ROOT; ?>/posts" class="btn btn-light"><i class="fas fa-undo-alt"></i>Back</a>
     <div class="card card-body bg-light mt-5">
         <h2>Add Post</h2>
-        <form action="<?php echo URL_ROOT; ?>/posts/add" method="POST">
+        <form action="<?php echo URL_ROOT; ?>/posts/add" method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label for="title">Title: </label>
             <input type="text" name="title" class="form-control form-control-lg <?php echo (!empty($data["title_error"])) ? 'is-invalid' : '' ?>" value="<?php $data["title"] ?>">
@@ -13,6 +13,11 @@
             <label for="body">Body: </label>
             <textarea name="body" rows="10" class="form-control form-control-lg <?php echo (!empty($data["body_error"])) ? 'is-invalid' : '' ?>"><?php $data["body"] ?></textarea>
             <span class="invalid-feedback"><?php echo $data["body_error"]; ?></span>
+        </div>
+        <div class="form-group">
+            <label for="title">Image </label>
+            <input type="file" name="image" class="form-control form-control-lg <?php echo (!empty($data["image_error"])) ? 'is-invalid' : '' ?>" value="<?php $data["title"] ?>">
+            <span class="invalid-feedback"><?php echo $data["image_error"]; ?></span>
         </div>
         <input type="submit" class="btn btn-success" value="Submit">
         </form>

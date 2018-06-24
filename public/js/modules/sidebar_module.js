@@ -56,6 +56,7 @@ var sidebar_module = (function(root){
             return online_users;
         },
         startFetching:function(){
+            fetchOnlineUsers();
             intervalId = setInterval(function(){
                 fetchOnlineUsers();
             },5000);

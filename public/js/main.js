@@ -1,3 +1,1 @@
-
-
 sidebar_module.startFetching();
